@@ -4,7 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apply - Galvanized Skygen</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=VT323&display=swap");
+
+      @theme {
+        --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+        --font-mc: "VT323", monospace;
+
+        --color-mc-dirt: #866043;
+        --color-mc-stone: #7d7d7d;
+        --color-mc-dark-stone: #373737;
+        --color-mc-light-stone: #a6a6a6;
+        --color-mc-green: #3c8527;
+        --color-mc-green-hover: #4e9e36;
+        --color-mc-green-border: #1e4712;
+      }
+
+      @layer base {
+        body {
+          @apply bg-mc-dark-stone text-gray-200 font-sans antialiased;
+          background-image: radial-gradient(
+            circle at center,
+            #4b4b4b 0%,
+            #2b2b2b 100%
+          );
+          background-attachment: fixed;
+        }
+      }
+
+      .mc-panel {
+        @apply bg-[#c6c6c6] border-4 border-t-white border-l-white border-b-[#555] border-r-[#555] p-6 text-[#333] shadow-xl;
+      }
+
+      .mc-panel-dark {
+        @apply bg-[#313233] border-4 border-t-[#505051] border-l-[#505051] border-b-[#1e1e1f] border-r-[#1e1e1f] p-6 text-gray-200 shadow-xl;
+      }
+
+      .mc-button {
+        @apply relative inline-flex items-center justify-center bg-mc-green hover:bg-mc-green-hover text-white px-6 py-3 font-mc text-2xl uppercase tracking-wider border-4 border-t-[#5cba3c] border-l-[#5cba3c] border-b-mc-green-border border-r-mc-green-border active:border-t-mc-green-border active:border-l-mc-green-border active:border-b-[#5cba3c] active:border-r-[#5cba3c] shadow-[4px_4px_0_0_rgba(0,0,0,0.5)] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.5)] active:translate-y-[2px] active:translate-x-[2px] transition-all duration-75;
+      }
+
+      .mc-button-secondary {
+        @apply relative inline-flex items-center justify-center bg-[#7D7D7D] hover:bg-[#8d8d8d] text-white px-6 py-3 font-mc text-2xl uppercase tracking-wider border-4 border-t-[#a6a6a6] border-l-[#a6a6a6] border-b-[#373737] border-r-[#373737] active:border-t-[#373737] active:border-l-[#373737] active:border-b-[#a6a6a6] active:border-r-[#a6a6a6] shadow-[4px_4px_0_0_rgba(0,0,0,0.5)] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.5)] active:translate-y-[2px] active:translate-x-[2px] transition-all duration-75;
+      }
+
+      .mc-button-danger {
+        @apply relative inline-flex items-center justify-center bg-[#b83333] hover:bg-[#c93e3e] text-white px-6 py-3 font-mc text-2xl uppercase tracking-wider border-4 border-t-[#e35454] border-l-[#e35454] border-b-[#7a1e1e] border-r-[#7a1e1e] active:border-t-[#7a1e1e] active:border-l-[#7a1e1e] active:border-b-[#e35454] active:border-r-[#e35454] shadow-[4px_4px_0_0_rgba(0,0,0,0.5)] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.5)] active:translate-y-[2px] active:translate-x-[2px] transition-all duration-75;
+      }
+
+      .mc-input {
+        @apply w-full bg-[#111] border-2 border-[#555] text-white p-3 font-sans focus:outline-none focus:border-mc-green shadow-inner placeholder:text-gray-600 transition-colors;
+      }
+
+      .mc-select {
+        @apply w-full bg-[#111] border-2 border-[#555] text-white p-3 font-sans focus:outline-none focus:border-mc-green shadow-inner appearance-none transition-colors;
+      }
+
+      .mc-title {
+        @apply font-mc text-4xl md:text-6xl text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)];
+      }
+    </style>
   </head>
   <body class="bg-mc-dark-stone text-gray-200 font-sans antialiased">
     <div
