@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galvanized Skygen - Staff Application</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-mc-dark-stone text-gray-200 font-sans antialiased">
+    <div class="min-h-screen flex flex-col items-center py-12 px-4 relative">
+      <div
+        class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"
+      ></div>
+
+      <div class="max-w-4xl w-full flex flex-col items-center space-y-12 z-10">
+        <div class="text-center space-y-4">
+          <h1 class="mc-title text-5xl md:text-7xl text-[#f2e624]">
+            Galvanized Skygen
+          </h1>
+          <h2 class="mc-title text-3xl text-white">Staff Application</h2>
+        </div>
+
+        <div class="mc-panel-dark w-full text-center space-y-4">
+          <p class="text-xl">
+            Welcome to the Galvanized Skygen application portal.
+          </p>
+          <p class="text-lg text-gray-400">
+            Please select the position you wish to apply for below. Ensure you
+            provide detailed answers!
+          </p>
+        </div>
+
+        <div
+          id="positions-container"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
+        >
+          <!-- Positions injected via JS -->
+        </div>
+      </div>
+
+      <a
+        href="staff.html"
+        class="fixed bottom-4 right-4 mc-button-secondary text-sm px-4 py-2 opacity-50 hover:opacity-100"
+      >
+        Staff Panel
+      </a>
+    </div>
+    <script type="module" src="./src/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Panel - Galvanized Skygen</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-mc-dark-stone text-gray-200 font-sans antialiased">
+    <!-- Login View -->
+    <div
+      id="login-view"
+      class="min-h-screen flex items-center justify-center p-4"
+    >
+      <form id="login-form" class="mc-panel-dark max-w-md w-full space-y-6">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="mc-title text-3xl">Staff Login</h2>
+          <a href="index.html" class="text-gray-400 hover:text-white">
+            <svg
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+          </a>
+        </div>
+
+        <div
+          id="login-error"
+          class="bg-red-900/50 border border-red-500 text-red-200 p-3 font-bold hidden"
+        ></div>
+
+        <div class="space-y-2">
+          <label class="block font-bold">Password</label>
+          <input
+            required
+            type="password"
+            id="password-input"
+            class="mc-input"
+          />
+        </div>
+
+        <button id="login-btn" type="submit" class="mc-button w-full">
+          Login
+        </button>
+      </form>
+    </div>
+
+    <!-- Dashboard View -->
+    <div id="dashboard-view" class="min-h-screen p-4 md:p-8 space-y-8 hidden">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="mc-button-secondary px-4">
+            <svg
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+          </a>
+          <h1 class="mc-title text-4xl">Applications</h1>
+        </div>
+        <button id="refresh-btn" class="mc-button-secondary text-sm px-4 py-2">
+          Refresh
+        </button>
+      </div>
+
+      <div
+        id="loading-apps"
+        class="text-center text-2xl font-mc text-white hidden"
+      >
+        Loading data...
+      </div>
+
+      <div id="applications-container" class="grid gap-6">
+        <!-- Apps injected here -->
+      </div>
+
+      <div id="no-apps" class="text-center text-gray-400 py-12 hidden">
+        No applications found.
+      </div>
+    </div>
+
+    <script type="module" src="./src/js/staff.js"></script>
+  </body>
+</html>

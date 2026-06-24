@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply - Galvanized Skygen</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-mc-dark-stone text-gray-200 font-sans antialiased">
+    <div
+      id="success-view"
+      class="min-h-screen flex-col items-center justify-center p-4 hidden"
+    >
+      <div class="mc-panel-dark max-w-xl w-full text-center space-y-6">
+        <svg
+          class="w-20 h-20 text-mc-green mx-auto"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+        <h2 class="mc-title text-4xl text-mc-green">Application Submitted!</h2>
+        <p class="text-xl">
+          Thank you for applying for the
+          <span id="success-position"></span> position.
+        </p>
+        <p class="text-gray-400">
+          Our staff team will review your application soon.
+        </p>
+        <div class="pt-6">
+          <a href="index.html" class="mc-button">Return Home</a>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="form-view"
+      class="min-h-screen py-12 px-4 relative flex justify-center hidden"
+    >
+      <div class="max-w-3xl w-full z-10 space-y-8">
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="mc-button-secondary px-4">
+            <svg
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+          </a>
+          <h1 class="mc-title text-4xl md:text-5xl">
+            <span id="position-title"></span> Application
+          </h1>
+        </div>
+
+        <form id="apply-form" class="mc-panel space-y-8">
+          <div
+            id="error-message"
+            class="bg-red-900/50 border border-red-500 text-red-200 p-4 font-bold hidden"
+          ></div>
+
+          <div class="space-y-6">
+            <h3 class="font-mc text-2xl border-b-4 border-[#555] pb-2">
+              Required Information
+            </h3>
+
+            <div class="space-y-2">
+              <label class="block font-bold">Discord Username</label>
+              <input
+                required
+                id="discordUsername"
+                type="text"
+                placeholder="e.g. notch#1234 or notch"
+                class="mc-input"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <label class="block font-bold">Discord User ID</label>
+              <input
+                required
+                id="discordUserId"
+                type="text"
+                placeholder="e.g. 123456789012345678"
+                class="mc-input"
+              />
+              <p class="text-xs text-[#555]">
+                Turn on Developer Mode in Discord to copy this.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <label class="block font-bold">Gamertag (IGN)</label>
+              <input
+                required
+                id="gamertag"
+                type="text"
+                placeholder="Your Xbox Live Gamertag"
+                class="mc-input"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-6" id="dynamic-questions">
+            <h3 class="font-mc text-2xl border-b-4 border-[#555] pb-2">
+              Position Questions
+            </h3>
+            <!-- Injected via JS -->
+          </div>
+
+          <button id="submit-btn" type="submit" class="mc-button w-full">
+            Submit Application
+          </button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="./src/js/apply.js"></script>
+  </body>
+</html>

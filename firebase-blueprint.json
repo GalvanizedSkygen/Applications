@@ -1,0 +1,39 @@
+{
+  "collections": {
+    "applications": {
+      "description": "Stores staff applications.",
+      "rules": {
+        "read": "request.auth != null && exists(/databases/$(database)/documents/sessions/$(request.auth.uid)) && get(/databases/$(database)/documents/sessions/$(request.auth.uid)).data.password == 'GalvanizedSkygenStaff2026'",
+        "write": "request.auth != null && exists(/databases/$(database)/documents/sessions/$(request.auth.uid)) && get(/databases/$(database)/documents/sessions/$(request.auth.uid)).data.password == 'GalvanizedSkygenStaff2026'",
+        "create": "true"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "position": { "type": "string" },
+          "discordUsername": { "type": "string" },
+          "discordUserId": { "type": "string" },
+          "gamertag": { "type": "string" },
+          "status": { "type": "string" },
+          "reason": { "type": "string" },
+          "answers": { "type": "object" },
+          "createdAt": { "type": "string" }
+        }
+      }
+    },
+    "sessions": {
+      "description": "Stores staff session passwords.",
+      "rules": {
+        "read": "request.auth != null && request.auth.uid == resource.id",
+        "write": "request.auth != null && request.auth.uid == request.resource.id"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "password": { "type": "string" },
+          "createdAt": { "type": "string" }
+        }
+      }
+    }
+  }
+}

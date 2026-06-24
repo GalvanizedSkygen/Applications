@@ -1,0 +1,14 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /applications/{document} {
+      allow create: if true;
+      allow read, write: if request.auth != null && exists(/databases/$(database)/documents/sessions/$(request.auth.uid)) && get(/databases/$(database)/documents/sessions/$(request.auth.uid)).data.password == 'GalvanizedSkygenStaff2026';
+    }
+    match /sessions/{document} {
+      allow read: if request.auth != null && request.auth.uid == document;
+      allow write: if request.auth != null && request.auth.uid == document;
+    }
+  }
+}
