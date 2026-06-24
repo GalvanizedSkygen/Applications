@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node server.js",
+    "build": "npx @tailwindcss/cli -i ./src/index.css -o ./styles.css",
     "start": "node server.js",
     "preview": "node server.js"
   },
